@@ -2,7 +2,8 @@
   <v-card class="overflow-hidden">
     <v-app-bar
       app
-      color="#"
+      flat
+      color="white"
       height="75"
       fixed
     >
@@ -17,12 +18,14 @@
       <v-text-field
       @focus="searchClosed = false"
       @blur="searchClosed = true"
+      v-model="search"
       placeholder="Search..."
       prepend-inner-icon="mdi-magnify"
-      class="expanding-search mt-2"
-      :class="{ 'closed' : searchClosed }"
+      class="expanding-search"
+      :class="{ 'closed' : searchClosed && !search }"
       filled
       dense
+      clearable
       ></v-text-field>
     </v-app-bar>
   </v-card>
@@ -31,6 +34,7 @@
 <script>
 export default {
   data: () => ({
+    search: null,
     searchClosed: true
   })
 }
@@ -38,10 +42,14 @@ export default {
 
 <style lang=sass>
   .v-input.expanding-search
+    margin-top: 25px
     transition: max-width 0.3s
     .v-input__slot
+      cursor: pointer !important
       &:before, &:after
         border-color: transparent !important
     &.closed
         max-width: 45px
+        .v-input__slot
+          background: transparent !important
 </style>
