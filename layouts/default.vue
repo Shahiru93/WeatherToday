@@ -9,7 +9,7 @@
     >
       <v-toolbar-title>
         <h3>
-          <nuxt-link :to="'/'" style="text-decoration: none;">Weather Today</nuxt-link>
+          <nuxt-link :to="'/'" style="text-decoration: none; color: blue; font-family: Arial; font-size: 25px;">Weather Today</nuxt-link>
         </h3>
       </v-toolbar-title>
 
