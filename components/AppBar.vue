@@ -15,18 +15,9 @@
 
       <v-spacer></v-spacer>
 
-      <v-text-field
-      @focus="searchClosed = false"
-      @blur="searchClosed = true"
-      v-model="search"
-      placeholder="Search..."
-      prepend-inner-icon="mdi-magnify"
-      class="expanding-search"
-      :class="{ 'closed' : searchClosed && !search }"
-      filled
-      dense
-      clearable
-      ></v-text-field>
+      <v-btn :to="'/search'">
+        <v-icon>mdi-magnify</v-icon>
+      </v-btn>
     </v-app-bar>
   </v-card>
 </template>
