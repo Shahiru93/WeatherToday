@@ -14,13 +14,10 @@
                                 </p>
                             </v-flex>
                             <v-flex xs4 class="text-xs-center">
-                                <h4>Temperature</h4>
-                                <h1 class="display-1">{{ weather.name }}</h1>
-                                <img :src="icon" alt="weather icon">
-                                <p>
-                                    <span class="dispaly-1">{{ temp() }} &#176;C</span>
-                                    <span class="caption ml-4">{{ weather.weather[0].description }}</span>
-                                </p>
+                                <h4>Wind & Pressure</h4>
+                                <h3 class="mt-4">Wind: {{ weather.wind.speed }} m/s ({{weather.wind.deg}} &deg;)</h3>
+                                <h3 class="mt-4">Humidity: {{ weather.main.humidity }} %</h3>
+                                <h3 class="mt-4">Pressure: {{ weather.main.pressure }} hPA</h3>
                             </v-flex>
                             <v-flex xs4 class="text-xs-center">
                                 <h4>Temperature</h4>
