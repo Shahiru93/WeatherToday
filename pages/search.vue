@@ -4,12 +4,31 @@
                 <v-card color="blue" dark>
                     <v-card-text>
                         <v-layout v-if="weather.weather" justify-center>
-                            <v-flex class="text-xs-center">
+                            <v-flex xs4 class="text-xs-center">
                                 <h4>Temperature</h4>
                                 <h1 class="display-1">{{ weather.name }}</h1>
                                 <img :src="icon" alt="weather icon">
                                 <p>
                                     <span class="dispaly-1">{{ temp() }} &#176;C</span>
+                                    <span class="caption ml-4">{{ weather.weather[0].description }}</span>
+                                </p>
+                            </v-flex>
+                            <v-flex xs4 class="text-xs-center">
+                                <h4>Temperature</h4>
+                                <h1 class="display-1">{{ weather.name }}</h1>
+                                <img :src="icon" alt="weather icon">
+                                <p>
+                                    <span class="dispaly-1">{{ temp() }} &#176;C</span>
+                                    <span class="caption ml-4">{{ weather.weather[0].description }}</span>
+                                </p>
+                            </v-flex>
+                            <v-flex xs4 class="text-xs-center">
+                                <h4>Temperature</h4>
+                                <h1 class="display-1">{{ weather.name }}</h1>
+                                <img :src="icon" alt="weather icon">
+                                <p>
+                                    <span class="dispaly-1">{{ temp() }} &#176;C</span>
+                                    <span class="caption ml-4">{{ weather.weather[0].description }}</span>
                                 </p>
                             </v-flex>
                         </v-layout>
@@ -29,11 +48,12 @@ export default {
     data () {
         return {
             city : 'London',
-            weather: {}
         }
     },
-    created () {
-        this.getWeatherInfo ()
+    asyncData ({ params,$axios }) {
+        return $axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=London&appid=129c5d65810fd42820964e446af9b61f`).then((res)=> {
+            return { weather: res }
+        })
     },
     computed:{
         icon () {
