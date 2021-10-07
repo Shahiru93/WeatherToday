@@ -9,7 +9,7 @@
                                 <h1 class="display-1">{{ weather.name }}</h1>
                                 <img :src="icon" alt="weather icon">
                                 <p>
-                                    <span class="dispaly-1">{{ temp() }} &#176;C</span>
+                                    <span class="headline">{{ temp() }} &#176;C</span>
                                     <span class="caption ml-4">{{ weather.weather[0].description }}</span>
                                 </p>
                             </v-flex>
@@ -20,13 +20,9 @@
                                 <h3 class="mt-4">Pressure: {{ weather.main.pressure }} hPA</h3>
                             </v-flex>
                             <v-flex xs4 class="text-xs-center">
-                                <h4>Temperature</h4>
-                                <h1 class="display-1">{{ weather.name }}</h1>
-                                <img :src="icon" alt="weather icon">
-                                <p>
-                                    <span class="dispaly-1">{{ temp() }} &#176;C</span>
-                                    <span class="caption ml-4">{{ weather.weather[0].description }}</span>
-                                </p>
+                                <h4>Min-Max Temperature</h4>
+                                <h3 class="mt-4">Max Temperature: {{ Math.round(weather.main.temp_max - 273) }} &#176;C</h3>
+                                <h3 class="mt-4">Min Temperature: {{ Math.round(weather.main.temp_min - 273) }} &#176;C</h3>
                             </v-flex>
                         </v-layout>
                     </v-card-text>
@@ -44,11 +40,11 @@
 export default {
     data () {
         return {
-            city : 'London',
+            city : 'Sri Lanka',
         }
     },
     asyncData ({ params,$axios }) {
-        return $axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=London&appid=129c5d65810fd42820964e446af9b61f`).then((res)=> {
+        return $axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=Sri Lanka&appid=129c5d65810fd42820964e446af9b61f`).then((res)=> {
             return { weather: res }
         })
     },
