@@ -3,7 +3,7 @@
             <v-flex xs12>
                 <v-card color="blue" dark>
                     <v-card-text>
-                        <v-layout v-if="weather.weather" justify-center>
+                        <v-layout v-if="weather.weather" justify-end>
                             <v-flex xs4 class="text-xs-center">
                                 <h4>Temperature</h4>
                                 <h1 class="display-1">{{ weather.name }}</h1>

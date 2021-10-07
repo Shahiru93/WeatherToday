@@ -2,9 +2,9 @@
   <v-app>
     <AppBar />
     <v-main>
-      <v-conainer>
+      <v-container>
         <nuxt />
-      </v-conainer>
+      </v-container>
     </v-main>
   </v-app>
 </template>
