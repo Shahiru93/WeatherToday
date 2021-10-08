@@ -1,98 +1,59 @@
 <template>
-  <v-container fluid>
-    <v-flex xs4>
-      <h2>10:10 PM</h2>
-      <h4>Friday, 08th Oct</h4>
-    </v-flex>
-    <v-card max-width="200" color="cyan darken-4" dark>
-      <v-card-text>
-        <v-flex>
-          <h5 class="caption">Sunrise : 05:00 AM</h5>
-          <h5 class="caption">Sunset : 06:00 PM</h5>
-          <h5 class="caption">Humidity : 50%</h5>
-          <h5 class="caption">Winds Speed : 200&deg;</h5>
-        </v-flex>
-      </v-card-text>
-    </v-card>
-    
-    <v-flex mt-15>
-      <v-card max-width="880" color="teal accent-1">
+  <v-container>
+    <v-row justify="center">
+      <v-col>
+        <h2>10:10 PM</h2>
+        <h4>Friday, 08 October</h4>
+        <h1>20&deg;C</h1>
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-card elevation="3">
         <v-card-text>
-          <v-row no-gutters>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-            <v-card class="ma-3" xs-5 color="transparent" >
-              <v-card-text>
-                <h5>Monday</h5>
-                <v-icon large>mdi-apple-icloud</v-icon>
-                <h5>Night : 20&deg;C</h5>
-                <h5>Day : 25&deg;C</h5>
-              </v-card-text>
-            </v-card>
-          </v-row>
+          <v-col>
+            <h5>Humidity : 58%</h5>
+            <h5>Pressure : 10007hPa</h5>
+            <h5>Wind Speed : 385m/s</h5>
+            <h5>Sunrise : 06:00</h5>
+            <h5>Sunset : 18:00</h5>
+          </v-col>
         </v-card-text>
       </v-card>
-    </v-flex>
+    </v-row>
+    <v-row class="mt-16">
+      <v-slider
+      v-model="time"
+      :max="6"
+      :tick-labels="labels"
+      class="mx-4"
+      ticks
+    ></v-slider>
+    </v-row>
+    <v-row justify="center">
+      <v-card align="center">
+        <v-card-text>
+          <v-col>
+            <h4>Temperature</h4>
+            <h1>Sri Lanka</h1>
+            <p>
+              <span class="headline">23&deg;</span>
+              <span class="caption ml-2">cloudy</span>
+            </p>
+            <h5>Min-Max Temperature</h5>
+            <h6>20&deg;C - 22&deg;C</h6>
+          </v-col>
+        </v-card-text>
+      </v-card>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 export default {
   data () {
+    return {
+      labels: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SA']
+    }
   },
-  methods: {
-    getWeatherInfo () {
-      navigator.geolocation.getCurrentPosition((success) => {
-        let {latitude, longitude} = sucsess.coords
-      })
-      this.$axios.$get(`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&appid=${API_KEY}`).then(res => (this.weather = res))
-    },
-  }
 }
 </script>
