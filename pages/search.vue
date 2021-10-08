@@ -6,7 +6,7 @@
                         <v-row>
                             <v-col xs4 class="text-xs-center">
                                 <h4>Temperature</h4>
-                                <h1 class="display-1">{{ weather.name }}</h1>
+                                <h1 class="display-1">{{ weather.name }}, {{ weather.sys.country }}</h1>
                                 <img :src="icon" alt="weather icon">
                                 <p>
                                     <span class="headline">{{ temp() }} &#176;C</span>
@@ -110,9 +110,3 @@ export default {
 
 <style lang="sass">
 </style>
-
-asyncData ({ params,$axios }) {
-        return $axios.$get(`https://api.openweathermap.org/data/2.5/weather?q=Sri Lanka&appid=129c5d65810fd42820964e446af9b61f`).then((res)=> {
-            return { weather: res }
-        })
-    },

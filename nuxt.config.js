@@ -43,6 +43,7 @@ export default {
     '@nuxtjs/axios'
   ],
 
+
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
