@@ -1,6 +1,6 @@
 <template>
     <v-container>
-            <v-col v-if="weather.main">
+            <v-col align="center" v-if="weather.main">
                 <v-card color="cyan darken-4" dark>
                     <v-card-text>
                         <v-row>
@@ -13,18 +13,27 @@
                                     <span class="caption ml-4">{{ weather.weather[0].description }}</span>
                                 </p>
                             </v-col>
-                            <v-col xs4 class="text-xs-center">
+                            <v-col xs4 lass="text-xs-center">
                                 <h4>Wind & Pressure</h4>
-                                <h3 class="mt-4">Wind: {{ weather.wind.speed }} m/s ({{weather.wind.deg}} &deg;)</h3>
-                                <h3 class="mt-4">Humidity: {{ weather.main.humidity }} %</h3>
-                                <h3 class="mt-4">Pressure: {{ weather.main.pressure }} hPA</h3>
+                                <h5 class="mt-4">Wind: {{ weather.wind.speed }} m/s ({{weather.wind.deg}} &deg;)</h5>
+                                <h5 class="mt-4">Humidity: {{ weather.main.humidity }} %</h5>
+                                <h5 class="mt-4">Pressure: {{ weather.main.pressure }} hPA</h5>
                             </v-col>
                             <v-col xs4 class="text-xs-center">
                                 <h4>Min-Max Temperature</h4>
-                                <h3 class="mt-4">Max Temperature: {{ Math.round(weather.main.temp_max - 273) }} &#176;C</h3>
-                                <h3 class="mt-4">Min Temperature: {{ Math.round(weather.main.temp_min - 273) }} &#176;C</h3>
-                                <v-btn class="mt-4">
-                                    <v-icon large>mdi-cards-heart</v-icon>
+                                <h5 class="mt-4">Max Temperature: {{ Math.round(weather.main.temp_max - 273) }} &#176;C</h5>
+                                <h5 class="mt-4">Min Temperature: {{ Math.round(weather.main.temp_min - 273) }} &#176;C</h5>
+                                <v-btn 
+                                depressed
+                                elevation="2"
+                                fab
+                                outlined
+                                raised
+                                rounded
+                                text
+                                class="mt-3"
+                                >
+                                <v-icon large color="red">mdi-cards-heart</v-icon>
                                 </v-btn>
                             </v-col>
                         </v-row>
@@ -36,9 +45,9 @@
                 <v-text-field label="Enter City Name..." solo v-model="city"></v-text-field>
                 </v-form>
             </v-flex>
-            <v-flex class="ma-4">
-                <v-row>
-                <v-card class="ma-10" max-width="200">
+            <v-col align="center">
+                <v-row justify="center">
+                <v-card class="ma-12" max-width="200">
                     <v-card-text>
                         <h3>Favourite 1</h3>
                         <h5>10:10 AM</h5>
@@ -47,7 +56,7 @@
                         <v-icon>mdi-white-balance-sunny</v-icon>
                     </v-card-text>
                 </v-card>
-                <v-card class="ma-10" max-width="200">
+                <v-card class="ma-12" max-width="200">
                     <v-card-text>
                         <h3>Favourite 1</h3>
                         <h5>10:10 AM</h5>
@@ -56,7 +65,7 @@
                         <v-icon>mdi-white-balance-sunny</v-icon>
                     </v-card-text>
                 </v-card>
-                <v-card class="ma-10" max-width="200">
+                <v-card class="ma-12" max-width="200">
                     <v-card-text>
                         <h3>Favourite 1</h3>
                         <h5>10:10 AM</h5>
@@ -66,8 +75,7 @@
                     </v-card-text>
                 </v-card>
                 </v-row>
-            </v-flex>
-            
+            </v-col>
     </v-container>
 </template>
 

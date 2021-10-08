@@ -15,8 +15,18 @@
 
       <v-spacer></v-spacer>
 
-      <v-btn :to="'/search'">
-        <v-icon>mdi-magnify</v-icon>
+      <v-btn 
+      :to="'/search'"
+      depressed
+      elevation="2"
+      fab
+      outlined
+      raised
+      rounded
+      text
+      color="white"
+      >
+        <v-icon color="blue">mdi-magnify</v-icon>
       </v-btn>
     </v-app-bar>
   </v-card>
