@@ -1,9 +1,9 @@
 <template>
     <v-container>
             <v-flex xs12>
-                <v-card color="blue" dark>
+                <v-card color="cyan darken-4" dark>
                     <v-card-text>
-                        <v-layout v-if="weather.weather" justify-end>
+                        <v-layout justify-end>
                             <v-flex xs4 class="text-xs-center">
                                 <h4>Temperature</h4>
                                 <h1 class="display-1">{{ weather.name }}</h1>
