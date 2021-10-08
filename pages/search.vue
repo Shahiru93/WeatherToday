@@ -23,6 +23,9 @@
                                 <h4>Min-Max Temperature</h4>
                                 <h3 class="mt-4">Max Temperature: {{ Math.round(weather.main.temp_max - 273) }} &#176;C</h3>
                                 <h3 class="mt-4">Min Temperature: {{ Math.round(weather.main.temp_min - 273) }} &#176;C</h3>
+                                <v-btn class="mt-4">
+                                    <v-icon large>mdi-cards-heart</v-icon>
+                                </v-btn>
                             </v-flex>
                         </v-layout>
                     </v-card-text>
@@ -33,6 +36,38 @@
                 <v-text-field label="Enter City Name..." solo v-model="city"></v-text-field>
                 </v-form>
             </v-flex>
+            <v-flex class="ma-4">
+                <v-row>
+                <v-card class="ma-10" max-width="200">
+                    <v-card-text>
+                        <h3>Favourite 1</h3>
+                        <h5>10:10 AM</h5>
+                        <h5>08.10.2021</h5>
+                        <h5>Temp: 20&deg;C</h5>
+                        <v-icon>mdi-white-balance-sunny</v-icon>
+                    </v-card-text>
+                </v-card>
+                <v-card class="ma-10" max-width="200">
+                    <v-card-text>
+                        <h3>Favourite 1</h3>
+                        <h5>10:10 AM</h5>
+                        <h5>08.10.2021</h5>
+                        <h5>Temp: 20&deg;C</h5>
+                        <v-icon>mdi-white-balance-sunny</v-icon>
+                    </v-card-text>
+                </v-card>
+                <v-card class="ma-10" max-width="200">
+                    <v-card-text>
+                        <h3>Favourite 1</h3>
+                        <h5>10:10 AM</h5>
+                        <h5>08.10.2021</h5>
+                        <h5>Temp: 20&deg;C</h5>
+                        <v-icon>mdi-white-balance-sunny</v-icon>
+                    </v-card-text>
+                </v-card>
+                </v-row>
+            </v-flex>
+            
     </v-container>
 </template>
 
